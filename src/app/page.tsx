@@ -98,7 +98,7 @@ export default function Home() {
           </video>
           
           <div className="container relative mx-auto px-4 text-center">
-            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-md sm:text-5xl md:text-6xl">
               Affordable Carbon Intelligence for Small Industries
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-200 [text-shadow:0_1px_4px_rgba(0,0,0,0.8)] md:text-xl">
