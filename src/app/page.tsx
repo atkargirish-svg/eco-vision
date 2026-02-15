@@ -101,12 +101,12 @@ export default function Home() {
             <source src="/veo/veo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-black/50"></div>
+          
           <div className="container relative mx-auto px-4 text-center">
-            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl">
               Affordable Carbon Intelligence for Small Industries
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-200 [text-shadow:0_1px_4px_rgba(0,0,0,0.8)] md:text-xl">
               A software-based AI platform that estimates and reduces carbon emissions using your existing energy data—no expensive hardware required.
             </p>
             <div className="mt-10">
