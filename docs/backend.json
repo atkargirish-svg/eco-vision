@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "Represents a user of the application.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The user's unique ID." },
+        "email": { "type": "string", "format": "email", "description": "The user's email address." },
+        "displayName": { "type": "string", "description": "The user's display name." },
+        "photoURL": { "type": "string", "format": "uri", "description": "URL of the user's profile picture." }
+      },
+      "required": ["uid", "email"]
+    },
+    "operationalData": {
+        "title": "Operational Data",
+        "description": "Daily operational data for a factory.",
+        "type": "object",
+        "properties": {
+            "date": {"type": "string", "format": "date"},
+            "electricity_kwh": {"type": "number"},
+            "fuel_type": { "type": "string", "enum": ["diesel", "coal", "natural_gas", "propane", "none"], "description": "Type of fuel used." },
+            "fuel_amount": { "type": "number", "description": "Amount of fuel consumed (liters for diesel/propane, kg for coal, m³ for natural gas)." },
+            "production_units": {"type": "number"},
+            "production_hours": {"type": "number"},
+            "thermal_image_description": {"type": "string", "description": "A textual description of anomalies found in a thermal image."},
+            "acoustic_analysis_summary": {"type": "string", "description": "A summary of an acoustic analysis of machinery."}
+        },
+        "required": ["date", "electricity_kwh", "fuel_type", "fuel_amount", "production_units", "production_hours"]
+    }
+  },
+  "auth": {
+    "providers": ["password", "anonymous"]
+  },
+  "firestore": {
+      "structure": [
+          {
+              "path": "/users/{userId}",
+              "definition": {
+                  "entityName": "user",
+                  "schema": {
+                      "$ref": "#/backend/entities/user"
+                  },
+                  "description": "Stores individual user profiles."
+              }
+          },
+          {
+              "path": "/users/{userId}/operationalData/{dataId}",
+              "definition": {
+                  "entityName": "operationalData",
+                  "schema": {
+                      "$ref": "#/backend/entities/operationalData"
+                  },
+                  "description": "Stores operational data for a user's factory."
+              }
+          }
+      ]
+  }
+}
