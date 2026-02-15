@@ -1,8 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
   CheckCircle,
   Factory,
@@ -18,22 +16,19 @@ import { Logo } from '@/components/common/logo';
 
 const featureCards = [
   {
-    icon: <Factory className="h-8 w-8 text-primary" />,
+    icon: <Factory className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />,
     title: 'Data Collection',
     description: "Easily input your factory's electricity usage, fuel consumption, and production data.",
-    image: PlaceHolderImages.find(img => img.id === 'feature-data'),
   },
   {
-    icon: <Cpu className="h-8 w-8 text-primary" />,
+    icon: <Cpu className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />,
     title: 'AI Pattern Analysis',
     description: 'Our AI analyzes peak usage, idle time, and inefficiencies to find savings.',
-    image: PlaceHolderImages.find(img => img.id === 'feature-ai'),
   },
   {
-    icon: <FileText className="h-8 w-8 text-primary" />,
+    icon: <FileText className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />,
     title: 'Smart Recommendations',
     description: 'Get actionable suggestions with estimated emission reduction percentages.',
-    image: PlaceHolderImages.find(img => img.id === 'feature-report'),
   },
 ];
 
@@ -131,7 +126,7 @@ export default function Home() {
             </div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
               {featureCards.map((feature) => (
-                <Card key={feature.title} className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <Card key={feature.title} className="group transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       {feature.icon}
@@ -139,18 +134,6 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    {feature.image && (
-                      <div className="mb-4 overflow-hidden rounded-lg">
-                        <Image
-                          src={feature.image.imageUrl}
-                          alt={feature.image.description}
-                          width={600}
-                          height={400}
-                          className="h-auto w-full object-cover"
-                          data-ai-hint={feature.image.imageHint}
-                        />
-                      </div>
-                    )}
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
                 </Card>
