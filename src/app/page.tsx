@@ -75,7 +75,6 @@ const revenueStreams = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -91,17 +90,17 @@ export default function Home() {
       </header>
 
       <main className="flex-grow">
-        <section className="relative py-20 md:py-32">
-          {heroImage && (
-             <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroImage.imageHint}
-              />
-          )}
+        <section className="relative py-20 md:py-32 overflow-hidden">
+           <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source src="/veo/veo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
           <div className="container relative mx-auto px-4 text-center">
             <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
