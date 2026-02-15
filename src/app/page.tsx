@@ -98,13 +98,13 @@ export default function Home() {
           </video>
           
           <div className="container relative mx-auto px-4 text-center">
-            <h1 className="font-headline text-4xl font-extrabold tracking-tight bg-gradient-to-b from-amber-400 to-amber-900 bg-clip-text text-transparent drop-shadow-md sm:text-5xl md:text-6xl">
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight bg-gradient-to-b from-amber-400 to-amber-900 bg-clip-text text-transparent drop-shadow-md sm:text-5xl md:text-6xl animate-in fade-in slide-in-from-top-12 duration-700">
               Affordable Carbon Intelligence for Small Industries
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-200 [text-shadow:0_1px_4px_rgba(0,0,0,0.8)] md:text-xl">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-200 [text-shadow:0_1px_4px_rgba(0,0,0,0.8)] md:text-xl animate-in fade-in slide-in-from-top-12 duration-700 delay-200">
               A software-based AI platform that estimates and reduces carbon emissions using your existing energy data—no expensive hardware required.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 animate-in fade-in slide-in-from-top-12 duration-700 delay-400">
               <Button size="lg" asChild>
                 <Link href="/login">
                   Go to Dashboard <ArrowRight className="ml-2 h-5 w-5" />
@@ -116,7 +116,7 @@ export default function Home() {
 
         <section id="features" className="bg-background py-16 sm:py-24">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-2xl text-center animate-in fade-in slide-in-from-bottom-10 duration-500" style={{ animationDelay: '300ms' }}>
               <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 How It Works
               </h2>
@@ -125,8 +125,8 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-              {featureCards.map((feature) => (
-                <Card key={feature.title} className="group transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary">
+              {featureCards.map((feature, index) => (
+                <Card key={feature.title} className="group transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary animate-in fade-in slide-in-from-bottom-12 duration-500" style={{ animationDelay: `${500 + index * 150}ms` }}>
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       {feature.icon}
@@ -144,7 +144,7 @@ export default function Home() {
 
         <section id="benefits" className="bg-secondary/50 py-16 sm:py-24">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center animate-in fade-in slide-in-from-bottom-10 duration-500" style={{ animationDelay: '1000ms' }}>
               <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Unlock Environmental and Business Benefits
               </h2>
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
             <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:max-w-4xl lg:mx-auto">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
+                <div key={index} className="flex items-start gap-3 animate-in fade-in slide-in-from-left-12 duration-500" style={{ animationDelay: `${1200 + index * 75}ms` }}>
                   <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                   <span className="text-foreground">{benefit}</span>
                 </div>
@@ -165,7 +165,7 @@ export default function Home() {
 
         <section id="business-model" className="bg-background py-16 sm:py-24">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center animate-in fade-in slide-in-from-bottom-10 duration-500" style={{ animationDelay: '1800ms' }}>
               <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Flexible Business Models
               </h2>
@@ -174,8 +174,8 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {revenueStreams.map((stream) => (
-                <Card key={stream.title} className="flex flex-col transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              {revenueStreams.map((stream, index) => (
+                <Card key={stream.title} className="flex flex-col transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-in fade-in zoom-in-95 duration-500" style={{ animationDelay: `${2000 + index * 150}ms` }}>
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       {stream.icon}
